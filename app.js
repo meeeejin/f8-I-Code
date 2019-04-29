@@ -36,10 +36,16 @@ const
   request = require('request'),
   express = require('express'),
   body_parser = require('body-parser'),
+  renderer = require('render-html'),
   app = express().use(body_parser.json()); // creates express http server
 
 // Sets server port and logs message on success
 app.listen(process.env.PORT || 1337, () => console.log('webhook is listening'));
+
+app.get('/render', (req, res) => {
+  const userId = req.query['userId'];
+  renderer.render(userId, res);
+});
 
 // Accepts POST requests at /webhook endpoint
 app.post('/webhook', (req, res) => {
