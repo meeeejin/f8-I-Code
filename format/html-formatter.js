@@ -34,7 +34,6 @@ exports.getFormattedContent = function(content, placeholders) {
         }
 
         tempContent = stringUtils.replaceAll(tempContent, placeholder, placeholderValue);
-        console.log(placeholderName);
     }
 
     return tempContent;

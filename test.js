@@ -1,5 +1,5 @@
 const assert = require('assert');
-const display = require('./display')
+const display = require('./format/html-formatter')
 
 const testRawContent = `
 <html>
